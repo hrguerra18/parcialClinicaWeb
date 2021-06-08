@@ -23,7 +23,7 @@ function AgregarCitas()
     $fecha = $_POST['fecha'];
 
     $sql = "INSERT INTO cita (id,identidapaciente,idpersonal,fecha,sintomas,estado) 
-    VALUES (default,'$identidadPaciente','$idPersonal','$fecha','$sintomas','Activo')";
+    VALUES (default,'$identidadPaciente','$idPersonal','$fecha','$sintomas','Asignado')";
 
     if (mysqli_query($con, $sql)) {
         echo "Cita Creado";
@@ -39,7 +39,7 @@ function listarCitas()
     require "config.php";
 
     //generamos la consulta
-    $sql = "SELECT * FROM cita ";
+    $sql = "SELECT pe.foto as fotomedico,pa.foto as fotopaciente,identidapaciente,idpersonal,pe.nombre as nombremedico,pe.apellido as apellidomedico, pa.nombre as nombrepaciente,pa.apellido as apellidopaciente,fecha,sintomas, c.estado as estado,observacion FROM cita c JOIN personalatencion pe ON pe.idPersonalAtencion = c.idpersonal JOIN paciente pa ON c.identidapaciente = pa.identidad ";
 
     mysqli_set_charset($con, "utf8"); //formato de datos utf8
 

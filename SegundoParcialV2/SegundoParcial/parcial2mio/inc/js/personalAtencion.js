@@ -124,7 +124,6 @@ function BuscarPersonalAtencion() {
   $(".btn-modificar").click(function () {
     var idPersonalAtencion = $(this).data("id");
     console.log(idPersonalAtencion);
-    alert(idPersonalAtencion);
     $.ajax({
       type: "POST",
       dataType: "json",

@@ -94,7 +94,6 @@ function GuardarEnUsuario($idPersonalAtencion, $nombrePersonalAtencion, $fotoPer
 function listarPersonalAtencion()
 {
   require "config.php";
-
   //generamos la consulta
   $sql = "SELECT * FROM personalatencion";
 

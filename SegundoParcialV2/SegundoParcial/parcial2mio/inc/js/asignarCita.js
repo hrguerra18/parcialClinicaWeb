@@ -10,15 +10,18 @@ function ListarPacientes() {
             "url": "controles/pacientes.php",
             "dataSrc": ""
         },
-        "columns": [
-            {
+        "columns": [{
                 "data": "foto",
                 "render": function (data) {
                     return '<img src="' + data + '" width=50 style="cursor:pointer" />'
                 }
             },
-            { "data": "nombre" },
-            { "data": "apellido" },
+            {
+                "data": "nombre"
+            },
+            {
+                "data": "apellido"
+            },
             {
                 "data": "identidad",
                 "render": function (data) {
@@ -44,9 +47,7 @@ function AsignarPersonal() {
 function AsignarPaciente() {
     $(".btnasignarpaciente").click(function () {
         $("#identidadPacienteCita").val($(this).data("id"));
-
     });
-    $("#identidadPacienteCita").val($(this).data("id"));
 }
 
 function listadoPersonalAtencion() {
@@ -57,17 +58,24 @@ function listadoPersonalAtencion() {
             "dataSrc": ""
         },
 
-        "columns": [
-            {
+        "columns": [{
                 "data": "foto",
                 "render": function (data) {
                     return '<img  src="' + data + '" width=50 style="cursor:pointer" />'
                 }
             },
-            { "data": "nombre" },
-            { "data": "apellido" },
-            { "data": "tipo" },
-
+            {
+                "data": "nombre"
+            },
+            {
+                "data": "apellido"
+            },
+            {
+                "data": "tipo"
+            },
+            {
+                "data": "trabajando"
+            },
             {
                 "data": "idPersonalAtencion",
                 "render": function (data) {
@@ -97,44 +105,44 @@ function AdicionarCita() {
                 type: "POST",
                 url: "controles/citas.php",
                 data: {
-        
+
                     accion: "adicionar",
-                    identidadPaciente:identidadPaciente,
-                    fecha:fecha,
-                    sintomas:sintomas,
-                    idPersonal:idPersonal,
-        
+                    identidadPaciente: identidadPaciente,
+                    fecha: fecha,
+                    sintomas: sintomas,
+                    idPersonal: idPersonal,
+
                 },
                 success: function (resp) {
                     alert("Se ha registrado la cita")
                     Limpiar();
                     ListarCitas();
-                    
+
                 }
             });
-        }else{
-            
+        } else {
+
             Swal.fire({
                 icon: "error",
                 title: "Error...",
                 text: "Por favor asigne un personal de atencion a la cita!",
                 confirmButtonText: "Ok",
                 footer: "<a href></a>",
-              });
+            });
         }
-    }else{
+    } else {
         Swal.fire({
             icon: "error",
             title: "Error...",
             text: "Por favor asigne un paciente a la cita!",
             confirmButtonText: "Ok",
             footer: "<a href></a>",
-          });
+        });
     }
-   
+
 }
 
-function ListarCitas(){
+function ListarCitas() {
     $("#tablaCitas").DataTable({
 
         "ajax": {
@@ -142,11 +150,28 @@ function ListarCitas(){
             "dataSrc": ""
         },
 
-        "columns": [
+        "columns": [{
+                "data": "fotopaciente",
+                "render": function (data) {
+                    return '<img  src="' + data + '" width=50 style="cursor:pointer" />'
+                }
+            },
             {"data": "identidapaciente"},
-            { "data": "fecha" },
-            { "data": "sintomas" },
-            { "data": "idpersonal" },
+            {"data": "nombrepaciente"},
+            {"data": "apellidopaciente" },
+            {
+                "data": "fotomedico",
+                "render": function (data) {
+                    return '<img  src="' + data + '" width=50 style="cursor:pointer" />'
+                }
+            },
+            {"data": "idpersonal"},
+            {"data": "nombremedico" },
+            {"data": "apellidomedico" },
+            {"data": "fecha"},
+            {"data": "sintomas"},
+            {"data": "estado"},
+            {"data": "observacion"},
         ]
 
 

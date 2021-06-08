@@ -67,6 +67,7 @@ include("inc/menuCitas.php");
                                 <th>Nombre</th>
                                 <th>Apellido</th>
                                 <th>Tipo</th>
+                                <th>Trabajando</th>
                                 <th>Acciones</th>
 
                             </tr>
@@ -114,10 +115,18 @@ include("inc/menuCitas.php");
                 <table id="tablaCitas" class="table table-hover my-0">
                     <thead>
                         <tr>
+                        <th>Foto</th>
                             <th>Identidad Paciente</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Foto del Personal</th>
+                            <th>Identidad Personal</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
                             <th>Fecha</th>
                             <th>Sintomas</th>
-                            <th>Identidad Personal</th>
+                            <th>Estado</th>
+                            <th>Observacion</th>
                            <!-- <th>Acciones</th>-->
                         </tr>
                     </thead>

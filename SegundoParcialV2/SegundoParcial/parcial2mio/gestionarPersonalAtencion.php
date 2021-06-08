@@ -40,7 +40,7 @@ include("inc/menuPersonalAtencion.php");
                             <label for="validationCustom04">Estado</label>
                             <select class="form-select" id="estadopaciente" aria-label="Default select example" required>
                                 <option selected disabled value="">Seleccione el estado</option>
-                                <option value="Activo">Activo</option>
+                                <option value="Asignado">Asignado</option>
                                 <option value="No atendido">No atendido</option>
                                 <option value="Cancelado">Cancelado</option>
                                 <option value="Atendido">Atendido</option>

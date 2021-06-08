@@ -3,7 +3,6 @@ function loguearse(){
     let contraseña = $("#contraseña").val().trim();
     
     if( usuario != "" && contraseña != "" ){
-        console.log("entro");
         $.ajax({
             url:'controles/validaruser.php',
             type:'post',
@@ -14,7 +13,6 @@ function loguearse(){
             },
             success:function(resp){
                 if(resp.validar) {
-                    alert(resp.tipo)
                     if(esUsuarioAdministrativo(resp.tipo)){
                         irAPaginaPrincipalAdminitrador();
                     }
