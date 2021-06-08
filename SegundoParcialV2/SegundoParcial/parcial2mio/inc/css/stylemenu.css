@@ -1,0 +1,27 @@
+.color-fondo{
+    background: rgb(20, 97, 199) !important; 
+}
+
+.color-fondo-a{
+    background: rgb(20, 97, 199) !important; 
+}
+
+.color-fondo-a:hover{
+    background: rgb(37, 27, 54)  !important;
+}
+.color-fondo-a:active{
+    background: rgb(37, 27, 54)  !important;
+}
+.boton-guardar-span img{
+    margin-right: 6px;
+}
+
+.btn-guardar{
+    width: 100px;
+    
+}
+
+
+.asignacion{
+    border-left-color:  rgb(37, 27, 54) !important ;
+}
